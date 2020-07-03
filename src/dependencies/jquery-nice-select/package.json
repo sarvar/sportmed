@@ -31,7 +31,7 @@
   },
   "bundleDependencies": false,
   "dependencies": {
-    "jquery": "^2.2.3"
+    "jquery": "^3.5.1"
   },
   "deprecated": false,
   "description": "A lightweight jQuery plugin that replaces native select elements with customizable dropdowns.",
