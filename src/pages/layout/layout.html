@@ -1,0 +1,45 @@
+{% import 'partials/_macro.html' as macro %}
+{%- set siteName = 'SportMed' %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta charset="UTF-8">
+  <title>{{ siteName }}</title>
+  <!-- <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+  <link rel="manifest" href="/img/site.webmanifest">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff"> -->
+  {%- for style in styles %}
+  <link rel="stylesheet" href="{{ style }}">
+  {%- endfor %}
+  <link rel="stylesheet" href="/icon-font/styles.css">
+  <link rel="stylesheet" href="/jquery-nice-select/css/nice-select.css">
+  <link rel="stylesheet" href="/slick-carousel/slick/slick.css">
+  <link rel="stylesheet" href="/unitegallery/css/unite-gallery.css">
+  <link rel="stylesheet" href="/unitegallery/themes/default/ug-theme-default.css">
+  {% block meta %}{% endblock %}
+</head>
+
+<body class="index">
+  <div class="page-wrap">
+    {% include 'partials/header.html' %}
+    {% block content %}{% endblock %}
+    {% include 'partials/footer.html' %}
+  </div>
+  <script src="/jquery-3.5.1.min.js"></script>
+  <script src="/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+  <script src="/slick-carousel/slick/slick.min.js"></script>
+  <script src="/unitegallery/js/unitegallery.min.js"></script>
+  <script src="/unitegallery/themes/default/ug-theme-default.js"></script>
+  {%- for script in scripts %}
+  <script src="{{ script }}"></script>
+  {%- endfor %}
+  {% block scripts %}{% endblock %}
+</body>
+
+</html>

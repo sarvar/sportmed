@@ -1,0 +1,53 @@
+$font-main: "Roboto",
+sans-serif;
+
+$font-size: 16px;
+$white: #ffffff;
+$black: #000000;
+$blue: #2FA6F8;
+$blue1: #0A3382;
+$blue2: #54CDD5;
+$gray: #AEAEAE;
+$gray1: #F9F9F9;
+$gray2: #9B9B9B;
+$gray3: #969696;
+$gray4: #D5D5D5;
+$gray5: #F3F3F3;
+$gray6: #F4F4F4;
+$orange: #FF9E21;
+$green:#93C049;
+$h1: 24px;
+$h2: 22px;
+$h3: 20px;
+$h4: 18px;
+$h5: 16px;
+$h6: 14px;
+
+$containers: (normal: 1170px,
+  small: 944px,
+  tablet: 768px,
+  tablet-small: 710px);
+
+$desktop: map-get($containers, "normal")+15px;
+$desktop-small: map-get($containers, "small")+15px;
+$tablet: map-get($containers, "tablet")+15px;
+$tablet-small: map-get($containers, "tablet-small")+15px;
+$mobile-large: 460px;
+$mobile: 365px;
+$mobile-small: 340px;
+$mobile-medium: 400px;
+
+$media: (d: $desktop,
+  ds: $desktop-small,
+  t: $tablet,
+  ts: $tablet-small,
+  mbl: $mobile-large,
+  mm: $mobile-medium,
+  mb: $mobile);
+
+$gutter: 15px;
+
+$transition-fast: 0.14s ease-out;
+$transition-medium: 0.2s ease-in;
+$transition-slow: 0.32s ease-in-out;
+$transition-long: 0.64s ease-out;

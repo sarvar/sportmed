@@ -1,0 +1,357 @@
+<div class="header-container">
+  <!--Top Container-->
+  <div class="top-container">
+    <div class="container">
+      <div class="top-container__inner sm-grid">
+        <div class="top-container__inner--location sm-width-1-2@l sm-width-1-2@m">
+          <i class="icon-pin"></i>
+          <p>Город Ташкент, Шайхантахурский район, улица Олмазор 6, 100027</p>
+        </div>
+        <div class="top-container__inner--info sm-width-1-2@l sm-width-1-2@m">
+          <div class="social">
+            {%- for item in [
+              { link: "youtube.com", icon: "youtube" },
+              { link: "facebook.com", icon: "facebook" },
+              { link: "instagram.com", icon: "instagram" }
+            ] %}
+            <a class="social__item" href="{{ item.link }}" title="{{ item.link }}" target="_blank">
+              <svg>
+                <use href="img/icons.svg#{{ item.icon }}"></use>
+              </svg>
+            </a>
+            {%- endfor %}
+          </div>
+          <div class="call-number">
+            <a href="tel:1061" title="1061">1061</a>
+          </div>
+          <div class="language m-t-dn">
+            <select name="">
+              <option value="RU">RU</option>
+              <option value="UZ">UZ</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Header-->
+  <header class="header">
+    <div class="container">
+      <div class="menubtn open_close_menu">
+        <i class="icon-bars"></i>
+      </div>
+      <div class="menu_main">
+        <div class="menu_main_cover mobilemenu">
+          <div class="grid-row grid-row--j-s grid-row--a-c mb20">
+            <div class="mobilemenu__title">
+              <h3>Меню</h3>
+            </div>
+            <div class="mobilemenu__btn">
+              <button class="menu_close open_close_menu">
+                <i class="icon-cancel"></i>
+              </button>
+            </div>
+          </div>
+          <form class="search-form">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Поиск" />
+              <button type="button" class="search-form__btn">
+                <i class="icon-search"></i>
+              </button>
+            </div>
+          </form>
+          <nav class="mobilenav">
+            <ul class="mobmenu__list mobmenu">
+              {%- for item in [
+              { title: "О нас", 
+                link: "#", 
+                haschild: true, 
+                active: true,
+                list: [
+                  "РНПЦСМ",
+                  "Специалисты",
+                  "Наши партнеры",
+                  "Лицензии",
+                  "Фотоальбомы",
+                  "Оборудование"
+                ]
+              },
+              { 
+                title: "Новости", 
+                link: "link2" 
+              },
+              { 
+                title: "Отделения", 
+                link: "#", 
+                haschild: true,
+                list: [
+                  "РНПЦСМ",
+                  "Специалисты",
+                  "Наши партнеры",
+                  "Лицензии",
+                  "Фотоальбомы",
+                  "Оборудование"
+                ]
+              },
+              { 
+                title: "Спротивный сектор", 
+                link: "link4", 
+                haschild: true,
+                list: [
+                  "РНПЦСМ",
+                  "Специалисты",
+                  "Наши партнеры",
+                  "Лицензии",
+                  "Фотоальбомы",
+                  "Оборудование"
+                ]
+              },
+              { 
+                title: "Пациентам", 
+                link: "link5", 
+                haschild: true,
+                list: [
+                  "РНПЦСМ",
+                  "Специалисты",
+                  "Наши партнеры",
+                  "Лицензии",
+                  "Фотоальбомы",
+                  "Оборудование"
+                ]
+              },
+              { 
+                title: "Специалисты", 
+                link: "link6" 
+              }
+                ,
+              { 
+                title: "Наука", 
+                link: "link7", 
+                haschild: true,
+                list: [
+                  "РНПЦСМ",
+                  "Специалисты",
+                  "Наши партнеры",
+                  "Лицензии",
+                  "Фотоальбомы",
+                  "Оборудование"
+                ]
+              }
+            ] %}
+              <li class="mobmenu__item {{'active' if item.active }} {{'haschild' if item.haschild }}">
+                <a class="mobmenu__link" href="/{{item.link}}" title="{{item.title}}">
+                  {{item.title}}
+                </a>
+                <ul class="mobmenu__child">
+                  {%- for list in item.list %}
+                  <li class="mobmenu__child--item">
+                    <a class="mobmenu__child--link" href="#">{{list}}</a>
+                  </li>
+                  {%- endfor %}
+                </ul>
+              </li>
+              {%- endfor %}
+            </ul>
+          </nav>
+          <div class="header__contact">
+            <div class="header__contact--item">
+              <div class="header__contact--icon">
+                <svg>
+                  <use href="img/icons.svg#phone"></use>
+                </svg>
+              </div>
+              <div class="header__contact--info">
+                <a href="tel:998712415245" title="+998(71) 241-52-45">+998(71) 241-52-45</a>
+                <span>Звоните сейчас!</span>
+              </div>
+            </div>
+            <div class="header__contact--item">
+              <div class="header__contact--icon">
+                <svg>
+                  <use href="img/icons.svg#email"></use>
+                </svg>
+              </div>
+              <div class="header__contact--info">
+                <a href="mailto:uzolympicmed@gmail.com" title="uzolympicmed@gmail.com">uzolympicmed@gmail.com</a>
+                <span>Напишите сюда!</span>
+              </div>
+            </div>
+          </div>
+          <div class="social">
+            {%- for item in [
+              { link: "youtube.com", icon: "youtube" },
+              { link: "facebook.com", icon: "facebook" },
+              { link: "instagram.com", icon: "instagram" }
+            ] %}
+            <a class="social__item" href="{{ item.link }}" title="{{ item.link }}" target="_blank">
+              <svg>
+                <use href="img/icons.svg#{{ item.icon }}"></use>
+              </svg>
+            </a>
+            {%- endfor %}
+          </div>
+          <div class="call-number">
+            <a href="tel:1061" title="1061">1061</a>
+          </div>
+        </div>
+      </div>
+      <div class="sm-grid grid-row--a-c">
+        <div class="header__logo logo sm-width-1-2@l sm-width-1-3@m sm-width-1-1@s">
+          <a class="logo__link" href="/" title="">
+            <img class="logo__img" src="/img/logo.svg" alt="" />
+            <span class="logo__txt">Республиканский Научно-Практический Центр Спортивной Медицины</span>
+          </a>
+        </div>
+        <div class="header__contact sm-width-1-2@l sm-width-2-3@m sm-width-1-1@s">
+          <div class="header__contact--item">
+            <div class="header__contact--icon">
+              <svg>
+                <use href="img/icons.svg#phone"></use>
+              </svg>
+            </div>
+            <div class="header__contact--info">
+              <a href="tel:998712415245" title="+998(71) 241-52-45">+998(71) 241-52-45</a>
+              <span>Звоните сейчас!</span>
+            </div>
+          </div>
+          <div class="header__contact--item">
+            <div class="header__contact--icon">
+              <svg>
+                <use href="img/icons.svg#email"></use>
+              </svg>
+            </div>
+            <div class="header__contact--info">
+              <a href="mailto:uzolympicmed@gmail.com" title="uzolympicmed@gmail.com">uzolympicmed@gmail.com</a>
+              <span>Напишите сюда!</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="language m-t-db">
+        <select name="">
+          <option value="RU">RU</option>
+          <option value="UZ">UZ</option>
+        </select>
+      </div>
+    </div>
+  </header>
+  <!--Nav Container-->
+  <div class="nav-container">
+    <div class="container">
+      <div class="nav-search">
+        <nav class="navmenu">
+          <ul class="navmenu__list">
+            {%- for item in [
+            { title: "О нас", 
+              link: "link1", 
+              haschild: true, 
+              active: true,
+              list: [
+                "РНПЦСМ",
+                "Специалисты",
+                "Наши партнеры",
+                "Лицензии",
+                "Фотоальбомы",
+                "Оборудование"
+              ]
+            },
+            { 
+              title: "Новости", 
+              link: "link2" 
+            },
+            { 
+              title: "Отделения", 
+              link: "link3", 
+              haschild: true,
+              list: [
+                "РНПЦСМ",
+                "Специалисты",
+                "Наши партнеры",
+                "Лицензии",
+                "Фотоальбомы",
+                "Оборудование"
+              ]
+            },
+            { 
+              title: "Спротивный сектор", 
+              link: "link4", 
+              haschild: true,
+              list: [
+                "РНПЦСМ",
+                "Специалисты",
+                "Наши партнеры",
+                "Лицензии",
+                "Фотоальбомы",
+                "Оборудование"
+              ]
+            },
+            { 
+              title: "Пациентам", 
+              link: "link5", 
+              haschild: true,
+              list: [
+                "РНПЦСМ",
+                "Специалисты",
+                "Наши партнеры",
+                "Лицензии",
+                "Фотоальбомы",
+                "Оборудование"
+              ]
+            },
+            { 
+              title: "Специалисты", 
+              link: "link6" 
+            }
+              ,
+            { 
+              title: "Наука", 
+              link: "link7", 
+              haschild: true,
+              list: [
+                "РНПЦСМ",
+                "Специалисты",
+                "Наши партнеры",
+                "Лицензии",
+                "Фотоальбомы",
+                "Оборудование"
+              ]
+            }
+          ] %}
+            <li class="navmenu__item {{'active' if item.active }} {{'haschild' if item.haschild }}">
+              <a class="navmenu__link" href="/{{item.link}}" title="{{item.title}}">
+                {{item.title}}
+              </a>
+              <ul class="navmenu__child">
+                {%- for list in item.list %}
+                <li class="navmenu__child--item">
+                  <a class="navmenu__child--link" href="#">{{list}}</a>
+                </li>
+                {%- endfor %}
+              </ul>
+            </li>
+            {%- endfor %}
+          </ul>
+        </nav>
+        <div class="search">
+          <button type="button" class="search__btn open_close_menu_search">
+            <i class="icon-search"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu_search_block menu_search_block">
+      <button class="close_menu_search open_close_menu_search">
+        <i class="icon-cancel"></i>
+      </button>
+      <form class="modal-search">
+        <div class="menu_search_block_child">
+          <input type="text" class="menu_search_block_child_input" placeholder="Поиск" />
+          <button class="btn-search" type="button">
+            <i class="icon-search"></i>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

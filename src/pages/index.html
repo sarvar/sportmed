@@ -1,0 +1,366 @@
+{% extends "layout/layout.html" %}
+{% block content %}
+<div id="content-wrap">
+  <!--Slider Section-->
+  <section class="hero-banner">
+    {%- for item in [
+      { 
+        title: "комплексное решение для вашего здоровья",
+        description: "При оплате услуг на стоимость 500 000 сум вы получите в подарок польное обслуживание брюшной полости",
+        link: "link1",
+        image: "slide01"
+      },
+      { 
+        title: "комплексное решение для вашего здоровья",
+        description: "При оплате услуг на стоимость 500 000 сум вы получите в подарок польное обслуживание брюшной полости",
+        link: "link1",
+        image: "slide01"
+      }
+    ] %}
+    <div class="hero-banner__item">
+      <img src="img/cover/{{item.image}}.jpg" alt="{{item.title}}" class="hero-banner__cover">
+      <div class="container">
+        <div class="hero-banner__content">
+          <h1 class="hero-banner__title">{{item.title}}</h1>
+          <p class="hero-banner__descrp">{{item.description}}</p>
+          <div class="hero-banner__links">
+            <a class="hero-banner__link btn btn-primary" href="/{{item.link}}" title="{{item.title}}">Подробнее</a>
+            <a class="hero-banner__link" href="/services" title="{{item.title}}">
+              Наши все услуги <i class="icon-right-open-mini"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    {%- endfor %}
+  </section>
+
+  <!--Information Section-->
+  <section class="infobox">
+    <div class="container">
+      <div class="infobox__wrap">
+        {%- for item in [
+          { 
+            title: "24 часовая служба скорой неотложной помощию", 
+            icon: "ambulance",
+            description: "Открыт круглосуточно для удобства, быстрого и легкого доступа"
+          },
+          { 
+            title: "Полные лабораторные услуги", 
+            icon: "chemical-reaction",
+            description: "Экономически эффективные, комплексные и клинические лабораторные услуги"
+          },
+          { 
+            title: "Медицинские специалисты", 
+            icon: "man",
+            description: "Квалифицированные и сертифицированные врачи за качественную медицинскую помощь "
+          }
+        ] %}
+        <div class="infobox__item">
+          <div class="infobox__icon">
+            <svg>
+              <use href="img/icons.svg#{{ item.icon }}"></use>
+            </svg>
+          </div>
+          <div class="infobox__content">
+            <h5 class="infobox__title">{{ item.title }}</h5>
+            <span class="infobox__descrp">{{ item.description }}</span>
+          </div>
+        </div>
+        {%- endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!--About Section-->
+  <section class="section-content section-about">
+    <div class="container">
+      <div class="sm-grid about">
+        <div class="sm-width-1-2@l sm-width-1-2@m sm-width-1-1@s">
+          <div class="about__left">
+            <div class="about__image">
+              <img src="img/about.jpg" alt="" />
+            </div>
+            <div class="about__timesheet timesheet">
+              <div class="timesheet__circle timesheet__circle-item">
+                <div class="timesheet__circle--inner timesheet__circle-item">
+                  <div class="timesheet__circle--icon">
+                    <svg>
+                      <use href="img/icons.svg#stethoscope"></use>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <h2 class="timesheet__title">Время работы</h2>
+              <table class="timesheet__table">
+                {%- for item in [
+                  { day: "Понидельник", time: "08:30 – 16:00"},
+                  { day: "Вторник", time: "08:30 – 16:00"},
+                  { day: "Среда", time: "08:30 – 16:00"},
+                  { day: "Четверг", time: "08:30 – 16:00"},
+                  { day: "Пятница", time: "08:30 – 16:00"},
+                  { day: "Суббота", time: "08:30 – 16:00"},
+                  { day: "Воскирсений", time: "Выходной день"}
+                ] %}
+                <tr>
+                  <th>
+                    <span class="timesheet__txt">{{item.day}}</span>
+                  </th>
+                  <td>{{item.time}}</td>
+                </tr>
+                {%- endfor %}
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="sm-width-1-2@l sm-width-1-2@m sm-width-1-1@s">
+          <div class="about__right">
+            <div class="page-title">
+              <h5 class="page-title__ttl page-title__ttl--right mb20">О нас</h5>
+              <h2 class="page-title__subtitle mb20">Республиканский Научно-Практический Центр Спортивной Медицины</h2>
+            </div>
+            <p>Президент Узбекистана Ислам Каримов подписал Постановление «О создании
+              Республиканского научно-практического центра спортивной медицины при Национальном Олимпийском комитете
+              Республики Узбекистан» <br><br>
+
+              (№ПП-1994 от 3 июля 2013 года). Решение принято в целях
+              создания необходимых условий для дальнейшего развития спортивной медицины в Республике и широкого
+              внедрения ее передовых достижений в процесс комплексной физической и психологической подготовки
+              спортсменов – членов сборных команд страны к Олимпийским, Азиатским играм, чемпионатам мира и Азии, другим
+              международным соревнованиям.</p>
+            <div class="empty"></div>
+            <div class="w-100">
+              <a class="read-more" href="#" title="">Подробнее <i class="icon-right-open-mini"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--Support Section-->
+  <section class="section-support">
+    <div class="container">
+      <div class="section-support__icon">
+        <svg>
+          <use href="img/icons.svg#support"></use>
+        </svg>
+      </div>
+      <div class="section-support__txt">
+        <p>Республиканский Научно-Практический Центр Спортивной Медицины
+          предлагает услуги магнитно-резонансной томографии головного мозга, позвоночника,
+          внутренних органов, а также проводит комплексное обследование. 24 часа</p>
+      </div>
+      <div class="section-support__phone">+998 (71) 241-88-44</div>
+    </div>
+  </section>
+
+  <!--Staff Section-->
+  <section class="section-content section-staff bg-gray pb20">
+    <div class="container">
+      <div class="grid-row grid-row--j-s grid-row--a-c mb20">
+        <div class="page-title mb15">
+          <h5 class="page-title__ttl page-title__ttl--right">Познакомьтесь с командой</h5>
+          <h2 class="page-title__subtitle">Наши специалисты</h2>
+        </div>
+        <a href="/news" class="btn btn-primary m-mbl-dn">Cмотреть больше</a>
+      </div>
+      <div class="staff-slider gridbox staff">
+        {%- for item in [
+          { 
+            title: "Муминов Азиз Алишерович", 
+            position: "Главный врач, Кардиолог",
+            image: "staff05",
+            link: "link01"
+          },
+          { 
+            title: "Йўлчиев Суннат Тўйчибаевич", 
+            position: "Хирург-травматолог",
+            image: "staff06",
+            link: "link01"
+          },
+          { 
+            title: "Махмудов Дилшодбек Эргашбекович", 
+            position: "Пульмонолог",
+            image: "staff07",
+            link: "link01"
+          },
+          { 
+            title: "Парпиев Сардор Расулович", 
+            position: "Хирург-травматолог",
+            image: "staff08",
+            link: "link01"
+          }
+        ] %}
+        <div class="gridbox__item">
+          <div class="gridbox__cover">
+            <a class="gridbox__link" href="/{{item.link}}" title="">
+              <img class="gridbox__image" src="img/{{item.image}}.jpg" alt="" />
+            </a>
+          </div>
+          <div class="gridbox__body">
+            <h4 class="gridbox__title">{{item.title}}</h4>
+            <div class="gridbox__subtitle">{{item.position}}</div>
+          </div>
+          <div class="gridbox__footer">
+            <a href="/{{item.link}}" title="{{item.link}}" class="gridbox__readmore">Подробнее</a>
+          </div>
+        </div>
+        {%- endfor %}
+      </div>
+      <div class="dn m-mbl-db text-center mt20">
+        <a href="/news" class="btn btn-primary">Cмотреть больше</a>
+      </div>
+    </div>
+  </section>
+
+  <!--Media Section-->
+  <section class="section-content section-media">
+    <div class="container">
+      <div class="sm-grid">
+        <div class="sm-width-1-2@l sm-width-1-2@m sm-width-1-1@s">
+          <div class="grid-row grid-row--j-s grid-row--a-c mb10">
+            <div class="page-title mb15">
+              <h5 class="page-title__ttl page-title__ttl--right">Все интересно здесь</h5>
+              <h2 class="page-title__subtitle">Медиа</h2>
+            </div>
+            <a href="/news" class="btn btn-primary m-mbl-dn">Все медиа</a>
+          </div>
+          <div id="gallery" style="display:none;">
+            <img alt="Youtube Video" data-type="youtube" data-videoid="TPL2at-t56Y"
+              data-description="Тестирование и исследования">
+            <img alt="Youtube Video" data-type="youtube" data-videoid="FdDSUuyljeY"
+              data-description="Тестирование и исследования">
+            <img alt="Youtube Video" data-type="youtube" data-videoid="i9yJ52Tjqnk"
+              data-description="Cпортивная медицина: обратная сторона медали">
+            <img alt="Youtube Video" data-type="youtube" data-videoid="i9yJ52Tjqnk"
+              data-description="Cпортивная медицина: обратная сторона медали">
+          </div>
+        </div>
+        <div class="sm-width-1-2@l sm-width-1-2@m sm-width-1-1@s m-ds-dn">
+          <div class="grid-row grid-row--j-e text-right">
+            <div class="page-title mb30">
+              <h5 class="page-title__ttl page-title__ttl--left">Интересный вопросы</h5>
+              <h2 class="page-title__subtitle">Вопросы и ответы</h2>
+            </div>
+          </div>
+          <div class="faq-wrap faq">
+            {%- for item in [
+              { 
+                question: "Россия Федерациясининг Свердловский вилояти Соғлиқни сақлаш вазири, тиббиёт фанлари номзоди Андрей Цветков бошчилигидаги ишчи гуруҳ 23 октябрь куни Миллий олимпия қўмитасида бўлди ?", 
+                answer: "Ўзбекистон спорт тиббиёти бўйича Россия билан ҳамкорлигини кучайтирмоқда",
+                link: "link1"
+              },
+              { 
+                question: "Россия Федерациясининг Свердловский вилояти Соғлиқни сақлаш вазири, тиббиёт фанлари номзоди Андрей Цветков бошчилигидаги ишчи гуруҳ 23 октябрь куни Миллий олимпия қўмитасида бўлди ?", 
+                answer: "Ўзбекистон спорт тиббиёти бўйича Россия билан ҳамкорлигини кучайтирмоқда",
+                link: "link1"
+              },
+              { 
+                question: "Россия Федерациясининг Свердловский вилояти Соғлиқни сақлаш вазири, тиббиёт фанлари номзоди Андрей Цветков бошчилигидаги ишчи гуруҳ 23 октябрь куни Миллий олимпия қўмитасида бўлди ?", 
+                answer: "Ўзбекистон спорт тиббиёти бўйича Россия билан ҳамкорлигини кучайтирмоқда",
+                link: "link1"
+              },
+              { 
+                question: "Россия Федерациясининг Свердловский вилояти Соғлиқни сақлаш вазири, тиббиёт фанлари номзоди Андрей Цветков бошчилигидаги ишчи гуруҳ 23 октябрь куни Миллий олимпия қўмитасида бўлди ?", 
+                answer: "Ўзбекистон спорт тиббиёти бўйича Россия билан ҳамкорлигини кучайтирмоқда",
+                link: "link1"
+              }
+            ] %}
+            <div class="faq__item">
+              <a class="faq__item--question" href="/{{item.link}}" title="{{item.question}}">{{item.question}}</a>
+              <div class="faq__item--answer">{{item.answer}}</div>
+            </div>
+            {%- endfor %}
+            <div class="w-100">
+              <a class="read-more" href="/#" title="">Все вопросы и ответы <i class="icon-right-open-mini"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="dn m-mbl-db text-center mt20">
+        <a href="/news" class="btn btn-primary">Все медиа</a>
+      </div>
+    </div>
+  </section>
+
+  <!--Ask Section-->
+  <section class="section-ask m-ds-dn">
+    <div class="container">
+      <div class="askme">
+        <div class="askme__left">
+          <div class="askme__txt1">У Вас есть вопросы ?</div>
+          <div class="askme__txt2">Задавайте, мы ответим!</div>
+        </div>
+        <div class="askme__right">
+          <form action="" class="askme__form">
+            <div class="form-group">
+              <textarea class="form-control" placeholder="Сообщение"></textarea>
+            </div>
+            <div class="askme__button">
+              <button class="btn btn-primary">Отправить</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--News Section-->
+  <section class="section-content section-news">
+    <div class="container">
+      <div class="grid-row grid-row--j-c">
+        <div class="page-title mb20">
+          <h5 class="page-title__ttl page-title__ttl--left page-title__ttl--right">Все актальное</h5>
+          <h2 class="page-title__subtitle text-center">Новости</h2>
+        </div>
+      </div>
+      <div class="news-slider gridbox">
+        {%- for item in [
+          { 
+            title: "Ўзбекистон спорт тиббиёти бўйича Россия билан ҳамкорлигини кучайтирмоқда", 
+            date: "Июнь, 17, 2020",
+            image: "staff05",
+            link: "link01"
+          },
+          { 
+            title: "РСТИАМда бўш иш ўринлари ҳақида эълон!", 
+            date: "Июнь, 17, 2020",
+            image: "doctor02",
+            link: "link01"
+          },
+          { 
+            title: "Ўзбекистон спорт тиббиёти бўйича Россия билан ҳамкорлигини кучайтирмоқда", 
+            date: "Июнь, 17, 2020",
+            image: "doctor03",
+            link: "link01"
+          }
+        ] %}
+        <div class="gridbox__item">
+          <div class="gridbox__cover">
+            <a class="gridbox__link" href="/{{item.link}}" title="">
+              <img class="gridbox__image" src="img/{{item.image}}.jpg" alt="" />
+            </a>
+          </div>
+          <div class="gridbox__body">
+            <div class="gridbox__subtitle">{{item.date}}</div>
+            <h4 class="gridbox__title"><a href="/{{item.link}}">{{item.title}}</a></h4>
+          </div>
+          <div class="gridbox__footer">
+            <a href="/{{item.link}}" title="{{item.link}}" class="gridbox__readmore">
+              Читать дальшее
+              <i class="icon-right-open-mini"></i>
+            </a>
+          </div>
+        </div>
+        {%- endfor %}
+      </div>
+      <div class="text-center mt30">
+        <a href="/news.html" title="" class="btn btn-primary">Все новости</a>
+      </div>
+    </div>
+  </section>
+
+
+</div>
+{% endblock %}
