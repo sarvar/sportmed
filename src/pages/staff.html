@@ -1,0 +1,107 @@
+{% extends "layout/layout.html" %}
+{% block content %}
+<div class="content-container">
+  <div class="main-content">
+    <div class="container">
+      <div class="title-wrap">
+        <div class="title">
+          <h1 class="title__ttl">Наши спецалисты</h1>
+        </div>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Главная </a></li>
+            <li class="breadcrumb-item active" aria-current="page">Наши спецалисты</li>
+          </ol>
+        </nav>
+      </div>
+      <div class="article-content">
+        <div class="gridbox sm-grid staff-grid">
+          {%- for item in [
+            { 
+              title: "Муминов Азиз Алишерович", 
+              position: "Главный врач, Кардиолог",
+              image: "staff05",
+              link: "link01"
+            },
+            { 
+              title: "Йўлчиев Суннат Тўйчибаевич", 
+              position: "Хирург-травматолог",
+              image: "staff06",
+              link: "link01"
+            },
+            { 
+              title: "Махмудов Дилшодбек Эргашбекович", 
+              position: "Пульмонолог",
+              image: "staff07",
+              link: "link01"
+            },
+            { 
+              title: "Парпиев Сардор Расулович", 
+              position: "Хирург-травматолог",
+              image: "staff08",
+              link: "link01"
+            },
+            { 
+              title: "Муминов Азиз Алишерович", 
+              position: "Главный врач, Кардиолог",
+              image: "staff05",
+              link: "link01"
+            },
+            { 
+              title: "Йўлчиев Суннат Тўйчибаевич", 
+              position: "Хирург-травматолог",
+              image: "staff06",
+              link: "link01"
+            },
+            { 
+              title: "Махмудов Дилшодбек Эргашбекович", 
+              position: "Пульмонолог",
+              image: "staff07",
+              link: "link01"
+            },
+            { 
+              title: "Парпиев Сардор Расулович", 
+              position: "Хирург-травматолог",
+              image: "staff08",
+              link: "link01"
+            }
+          ] %}
+          <div class="sm-width-1-4@l sm-width-1-4@m sm-width-1-2@s gridbox__item">
+            <div class="gridbox__cover">
+              <a class="gridbox__link" href="/{{item.link}}" title="">
+                <img class="gridbox__image" src="img/{{item.image}}.jpg" alt="" />
+              </a>
+            </div>
+            <div class="gridbox__body">
+              <h4 class="gridbox__title">{{item.title}}</h4>
+              <div class="gridbox__subtitle">{{item.position}}</div>
+            </div>
+            <div class="gridbox__footer">
+              <a href="/{{item.link}}" title="{{item.link}}" class="gridbox__readmore">Подробнее</a>
+            </div>
+          </div>
+          {%- endfor %}
+        </div>
+
+        <nav class="pagnav">
+          <ul class="pagination">
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item active"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
