@@ -1,0 +1,51 @@
+{% extends "layout/layout.html" %}
+{% block content %}
+<div class="content-container">
+  <div class="main-content">
+    <div class="services-container">
+      <div class="services-tool">
+        <img src="img/stethoscope.png" alt="" />
+      </div>
+      <div class="container">
+        <div class="title-wrap">
+          <div class="title">
+            <h1 class="title__ttl">Наши Услуги</h1>
+          </div>
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="#">Главная </a></li>
+              <li class="breadcrumb-item active" aria-current="page">Наши Услуги</li>
+            </ol>
+          </nav>
+        </div>
+        <div class="article-content services-content">
+          <div class="services services-slider">
+            {%- for item in [
+              { title: "Отдел лучевой диагностики", icon: "icon01" },
+              { title: "Отдел диагностической лаборатории", icon: "icon02" },
+              { title: "Отдел физиотерапии и реабилитации", icon: "icon03" },
+              { title: "Отдел функциональной диагностики", icon: "icon04" },
+              { title: "Стационар", icon: "icon05" },
+              { title: "Отдел спортивной медицины", icon: "icon06" },
+              { title: "Научно-исследовательский сектор", icon: "icon07" },
+              { title: "Отдел функциональной диагностики", icon: "icon08" },
+              { title: "Универсальная иконка для всех", icon: "icon09" }
+            ] %}
+            <div class="services__item">
+              <div class="services__icon">
+                <svg>
+                  <use href="img/icons.svg#{{ item.icon }}"></use>
+                </svg>
+              </div>
+              <div class="services__name">
+                <h6 class="services__title">{{ item.title }}</h6>
+              </div>
+            </div>
+            {%- endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

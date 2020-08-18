@@ -15,20 +15,30 @@
               { link: "instagram.com", icon: "instagram" }
             ] %}
             <a class="social__item" href="{{ item.link }}" title="{{ item.link }}" target="_blank">
-              <svg>
-                <use href="img/icons.svg#{{ item.icon }}"></use>
-              </svg>
+              <i class="icon-{{ item.icon }}"></i>
             </a>
             {%- endfor %}
           </div>
-          <div class="call-number">
-            <a href="tel:1061" title="1061">1061</a>
+          <div class="call-number">            
+            <a href="tel:1193" title="1193">
+              <svg>
+                <use href="img/icons.svg#ambulance-icon"></use>
+              </svg>
+              <span>1193</span>
+            </a>
           </div>
-          <div class="language m-t-dn">
-            <select name="">
-              <option value="RU">RU</option>
-              <option value="UZ">UZ</option>
-            </select>
+          <div class="languages m-t-dn">
+            <div class="oz curLang"><span class="title"></span></div>
+            <ul class="language-switcher" style="display: none;">
+              <li>
+                <span class="hide">Ўзбек</span> </li>
+              <li>
+                <a class="uz" href="/uz/">Oʻzbek</a> </li>
+              <li>
+                <a class="ru" href="/ru/">Русский</a> </li>
+              <li>
+                <a class="en" href="/en/">English</a> </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -94,7 +104,7 @@
                 ]
               },
               { 
-                title: "Спротивный сектор", 
+                title: "Спортивный сектор", 
                 link: "link4", 
                 haschild: true,
                 list: [
@@ -227,11 +237,18 @@
           </div>
         </div>
       </div>
-      <div class="language m-t-db">
-        <select name="">
-          <option value="RU">RU</option>
-          <option value="UZ">UZ</option>
-        </select>
+      <div class="languages m-t-db">
+        <div class="oz curLang"><span class="title"></span></div>
+        <ul class="language-switcher" style="display: none;">
+          <li>
+            <span class="hide"></span> </li>
+          <li>
+            <a class="uz" href="/uz/">Oʻzbek</a> </li>
+          <li>
+            <a class="ru" href="/ru/">Русский</a> </li>
+          <li>
+            <a class="en" href="/en/">English</a> </li>
+        </ul>
       </div>
     </div>
   </header>
@@ -243,7 +260,7 @@
           <ul class="navmenu__list">
             {%- for item in [
             { title: "О нас", 
-              link: "link1", 
+              link: "#", 
               haschild: true, 
               active: true,
               list: [
@@ -261,7 +278,7 @@
             },
             { 
               title: "Отделения", 
-              link: "link3", 
+              link: "#", 
               haschild: true,
               list: [
                 "РНПЦСМ",
@@ -273,8 +290,8 @@
               ]
             },
             { 
-              title: "Спротивный сектор", 
-              link: "link4", 
+              title: "Спортивный сектор", 
+              link: "#", 
               haschild: true,
               list: [
                 "РНПЦСМ",
@@ -287,7 +304,7 @@
             },
             { 
               title: "Пациентам", 
-              link: "link5", 
+              link: "#", 
               haschild: true,
               list: [
                 "РНПЦСМ",
@@ -305,7 +322,7 @@
               ,
             { 
               title: "Наука", 
-              link: "link7", 
+              link: "#", 
               haschild: true,
               list: [
                 "РНПЦСМ",

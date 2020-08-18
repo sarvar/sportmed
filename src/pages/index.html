@@ -21,11 +21,13 @@
       <img src="img/cover/{{item.image}}.jpg" alt="{{item.title}}" class="hero-banner__cover">
       <div class="container">
         <div class="hero-banner__content">
-          <h1 class="hero-banner__title">{{item.title}}</h1>
-          <p class="hero-banner__descrp">{{item.description}}</p>
+          <div class="hero-banner__top">
+            <h1 class="hero-banner__title">{{item.title}}</h1>
+            <p class="hero-banner__descrp">{{item.description}}</p>
+          </div>
           <div class="hero-banner__links">
             <a class="hero-banner__link btn btn-primary" href="/{{item.link}}" title="{{item.title}}">Подробнее</a>
-            <a class="hero-banner__link" href="/services" title="{{item.title}}">
+            <a class="hero-banner__link hero-banner__link--services" href="/services" title="{{item.title}}">
               Наши все услуги <i class="icon-right-open-mini"></i>
             </a>
           </div>
@@ -138,6 +140,49 @@
     </div>
   </section>
 
+  <!--Services Section-->
+  <section class="section-content section-services bg-gray">
+    <div class="services-container">
+      <div class="services-tool">
+        <img src="img/stethoscope.png" alt="" />
+      </div>
+      <div class="container">
+        <div div class="grid-row grid-row--j-c">
+          <div class="page-title mb20">
+            <h5 class="page-title__ttl page-title__ttl--left page-title__ttl--right">Все виде</h5>
+            <h2 class="page-title__subtitle text-center">Качественные услуги</h2>
+          </div>
+        </div>
+        <div class="article-content services-content">
+          <div class="services services-slider">
+            {%- for item in [
+              { title: "Отдел лучевой диагностики", icon: "icon01" },
+              { title: "Отдел диагностической лаборатории", icon: "icon02" },
+              { title: "Отдел физиотерапии и реабилитации", icon: "icon03" },
+              { title: "Отдел функциональной диагностики", icon: "icon04" },
+              { title: "Стационар", icon: "icon05" },
+              { title: "Отдел спортивной медицины", icon: "icon06" },
+              { title: "Научно-исследовательский сектор", icon: "icon07" },
+              { title: "Отдел функциональной диагностики", icon: "icon08" },
+              { title: "Универсальная иконка для всех", icon: "icon09" }
+            ] %}
+            <div class="services__item">
+              <div class="services__icon">
+                <svg>
+                  <use href="img/icons.svg#{{ item.icon }}"></use>
+                </svg>
+              </div>
+              <div class="services__name">
+                <h6 class="services__title">{{ item.title }}</h6>
+              </div>
+            </div>
+            {%- endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!--Support Section-->
   <section class="section-support">
     <div class="container">
@@ -199,7 +244,7 @@
             </a>
           </div>
           <div class="gridbox__body">
-            <h4 class="gridbox__title">{{item.title}}</h4>
+            <h4 class="gridbox__title"><a href="#" title="">{{item.title}}</a></h4>
             <div class="gridbox__subtitle">{{item.position}}</div>
           </div>
           <div class="gridbox__footer">
@@ -237,7 +282,7 @@
               data-description="Cпортивная медицина: обратная сторона медали">
           </div>
         </div>
-        <div class="sm-width-1-2@l sm-width-1-2@m sm-width-1-1@s m-ds-dn">
+        <div class="sm-width-1-2@l sm-width-1-2@m sm-width-1-1@s">
           <div class="grid-row grid-row--j-e text-right">
             <div class="page-title mb30">
               <h5 class="page-title__ttl page-title__ttl--left">Интересный вопросы</h5>
@@ -315,46 +360,97 @@
           <h2 class="page-title__subtitle text-center">Новости</h2>
         </div>
       </div>
-      <div class="news-slider gridbox">
-        {%- for item in [
-          { 
-            title: "Ўзбекистон спорт тиббиёти бўйича Россия билан ҳамкорлигини кучайтирмоқда", 
-            date: "Июнь, 17, 2020",
-            image: "staff05",
-            link: "link01"
-          },
-          { 
-            title: "РСТИАМда бўш иш ўринлари ҳақида эълон!", 
-            date: "Июнь, 17, 2020",
-            image: "doctor02",
-            link: "link01"
-          },
-          { 
-            title: "Ўзбекистон спорт тиббиёти бўйича Россия билан ҳамкорлигини кучайтирмоқда", 
-            date: "Июнь, 17, 2020",
-            image: "doctor03",
-            link: "link01"
-          }
-        ] %}
-        <div class="gridbox__item">
-          <div class="gridbox__cover">
-            <a class="gridbox__link" href="/{{item.link}}" title="">
-              <img class="gridbox__image" src="img/{{item.image}}.jpg" alt="" />
-            </a>
+
+      <ul class="tabs">
+        <li class="tab-link current" data-tab="tab-1">Новости</li>
+        <li class="tab-link" data-tab="tab-2">Блог</li>
+      </ul>
+
+      <div id="tab-1" class="tab-content current">
+        <div class="news-slider gridbox">
+          {%- for item in [
+            { 
+              title: "Ўзбекистон спорт тиббиёти бўйича Россия билан ҳамкорлигини кучайтирмоқда", 
+              date: "Июнь, 17, 2020",
+              image: "staff05",
+              link: "link01"
+            },
+            { 
+              title: "РСТИАМда бўш иш ўринлари ҳақида эълон!", 
+              date: "Июнь, 17, 2020",
+              image: "doctor02",
+              link: "link01"
+            },
+            { 
+              title: "Ўзбекистон спорт тиббиёти бўйича Россия билан ҳамкорлигини кучайтирмоқда", 
+              date: "Июнь, 17, 2020",
+              image: "doctor03",
+              link: "link01"
+            }
+          ] %}
+          <div class="gridbox__item">
+            <div class="gridbox__cover">
+              <a class="gridbox__link" href="/{{item.link}}" title="">
+                <img class="gridbox__image" src="img/{{item.image}}.jpg" alt="" />
+              </a>
+            </div>
+            <div class="gridbox__body">
+              <div class="gridbox__subtitle">{{item.date}}</div>
+              <h4 class="gridbox__title"><a href="/{{item.link}}">{{item.title}}</a></h4>
+            </div>
+            <div class="gridbox__footer">
+              <a href="/{{item.link}}" title="{{item.link}}" class="gridbox__readmore">
+                Читать дальшее
+                <i class="icon-right-open-mini"></i>
+              </a>
+            </div>
           </div>
-          <div class="gridbox__body">
-            <div class="gridbox__subtitle">{{item.date}}</div>
-            <h4 class="gridbox__title"><a href="/{{item.link}}">{{item.title}}</a></h4>
-          </div>
-          <div class="gridbox__footer">
-            <a href="/{{item.link}}" title="{{item.link}}" class="gridbox__readmore">
-              Читать дальшее
-              <i class="icon-right-open-mini"></i>
-            </a>
-          </div>
+          {%- endfor %}
         </div>
-        {%- endfor %}
       </div>
+      <div id="tab-2" class="tab-content">
+        <div class="news-slider gridbox">
+          {%- for item in [           
+            { 
+              title: "РСТИАМда бўш иш ўринлари ҳақида эълон!", 
+              date: "Июнь, 17, 2020",
+              image: "doctor02",
+              link: "link01"
+            },
+            { 
+              title: "Ўзбекистон спорт тиббиёти бўйича Россия билан ҳамкорлигини кучайтирмоқда", 
+              date: "Июнь, 17, 2020",
+              image: "doctor03",
+              link: "link01"
+            },
+             { 
+              title: "Ўзбекистон спорт тиббиёти бўйича Россия билан ҳамкорлигини кучайтирмоқда", 
+              date: "Июнь, 17, 2020",
+              image: "staff05",
+              link: "link01"
+            }
+          ] %}
+          <div class="gridbox__item">
+            <div class="gridbox__cover">
+              <a class="gridbox__link" href="/{{item.link}}" title="">
+                <img class="gridbox__image" src="img/{{item.image}}.jpg" alt="" />
+              </a>
+            </div>
+            <div class="gridbox__body">
+              <div class="gridbox__subtitle">{{item.date}}</div>
+              <h4 class="gridbox__title"><a href="/{{item.link}}">{{item.title}}</a></h4>
+            </div>
+            <div class="gridbox__footer">
+              <a href="/{{item.link}}" title="{{item.link}}" class="gridbox__readmore">
+                Читать дальшее
+                <i class="icon-right-open-mini"></i>
+              </a>
+            </div>
+          </div>
+          {%- endfor %}
+        </div>
+      </div>
+            
       <div class="text-center mt30">
         <a href="/news.html" title="" class="btn btn-primary">Все новости</a>
       </div>

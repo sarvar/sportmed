@@ -1,5 +1,4 @@
 $(document).ready(function () {
-  $('select').niceSelect();
 
   $(".hero-banner").slick({
     arrows: true,
@@ -55,58 +54,24 @@ $(document).ready(function () {
         }
       }
     ]
-  });
+  }); 
+  
 
   $("#gallery").unitegallery({
-    //gallery width
     gallery_width: 900,
-
-    //gallery height
     gallery_height: 400,
-
-    //gallery minimal width when resizing
     gallery_min_width: 400,
-
-    //gallery minimal height when resizing
     gallery_min_height: 400,
-
-    //default,compact,<a href="https://www.jqueryscript.net/tags.php?/grid/">grid</a>,slider
-    //select your desired theme from the list of themes.
     gallery_theme: "default",
-
-    //default, alexis etc... - the global skin of the gallery.
-    //Will change all gallery items by default.
     gallery_skin: "default",
-
-    //all , minimal , visible - preload type of the images.
-    //minimal - only image nabours will be loaded each time.
-    //visible - visible thumbs images will be loaded each time.
-    //all - load all the images first time.
     gallery_images_preload_type: "minimal",
-
-    //true / false - begin slideshow autoplay on start
     gallery_autoplay: false,
-
-    //play interval of the slideshow
     gallery_play_interval: 3000,
-
-    //true,false - pause on mouseover when playing slideshow true/false
     gallery_pause_on_mouseover: true,
-
-    //true,false - change this option, add more mousewheel choices
     gallery_control_thumbs_mousewheel: false,
-
-    //true,false - enable / disble keyboard controls
     gallery_control_keyboard: false,
-
-    //true,false - next button on last image goes to first image.
     gallery_carousel: true,
-
-    //true, false - preserver ratio when on window resize
     gallery_preserve_ratio: true,
-
-    //set custom background color. 
-    //If not set it will be taken from css.
     gallery_background_color: "#fff"
   });
 
@@ -166,5 +131,58 @@ $(document).ready(function () {
     ],
     infobar: false,
   });
+
+  //languages switcher
+  var curLang = $('.curLang');
+  var selection = $('ul.language-switcher');
+  var select = selection.find('li');
+  var langDtc = select.find('span').attr('data-lang');
+
+  curLang.find('span.title').html(select.find('span').text());
+  curLang.addClass(langDtc);
+  selection.find('span').addClass('hide');
+
+  curLang.on('click', function (event) {
+    event.preventDefault();
+    if (curLang.hasClass('active')) {
+      curLang.removeClass('active');
+      $(this).next().stop().slideUp(200);
+    } else {
+      curLang.addClass('active');
+      $(this).next().stop().slideDown(200);
+    }
+  });
+
+  select.on('click', function (event) {
+    curLang.trigger('click');
+  });
+
+  if ($(".timesheet").hasClass("mb15")) {
+    $(".about-title").addClass("extra");
+  }
+
+  //Open/close submenu
+  $('.navmenu__item > a').click(function () {
+    if ($(this).next('ul').hasClass("show")) {
+        $('.navmenu__child').removeClass('show');
+    } else {
+        $('.navmenu__child').removeClass('show');
+        $(this).next('ul').toggleClass('show');
+    }
+  });
+
+  //Tabs
+  $('ul.tabs li').click(function(){
+		var tab_id = $(this).attr('data-tab');
+
+		$('ul.tabs li').removeClass('current');
+		$('.tab-content').removeClass('current');
+
+		$(this).addClass('current');
+    $("#"+tab_id).addClass('current');
+    
+    $('.news-slider').slick('setPosition');
+	})
+
 
 });
